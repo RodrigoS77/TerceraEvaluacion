@@ -65,4 +65,33 @@ BoletosContoller.updateBoleto = async (req, res) =>{
     }
 }
 
+BoletosContoller.InsertBoletos = async (req, res) => {
+    try {
+        const {
+            customerId,
+            quantity,
+            purchaseDate,
+            total,
+            paymentStatus,
+            transactionId
+        } = req.body
+
+        const newBoleto = new BoletosModel({
+            customerId,
+            quantity,
+            purchaseDate,
+            total,
+            paymentStatus,
+            transactionId
+        })
+
+        await newBoleto.save()
+
+        res.json({message: "Boleto Creado Correctamente"})
+    } catch (error) {
+        console.log("error" + error)
+        return res.status(500).json({message: "Internal Server Error"})
+    }
+}
+
 export default BoletosContoller

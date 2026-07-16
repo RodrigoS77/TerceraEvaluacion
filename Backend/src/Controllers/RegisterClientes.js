@@ -92,7 +92,7 @@ RegisterClientes.verify = async(req, res) => {
             loginAttemps,
             timeOut
         } = decoded
-
+        
         if(verificationCodeRequest !== storedCode){
             return res.status(400).json({message: "Codigo Incorrecto"})
         }

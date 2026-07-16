@@ -8,6 +8,9 @@ import RegisterAdminRoutes from "./src/routes/RegisterAdmins.js"
 import Login from "./src/routes/login.js"
 import LoginAdmin from "./src/routes/loginAdmin.js"
 import BoletosRoutes from "./src/routes/Boletos.js"
+import Wompi from "./src/routes/Wompi.js"
+import LogOutClientes from "./src/routes/LogOutClientes.js"
+import LogOutAdmin  from "./src/routes/LogOutAdmin.js"
 
 const app = express()
 
@@ -28,5 +31,8 @@ app.use("/api/RegisterAdmin", RegisterAdminRoutes)
 app.use("/api/loginClientes", Login)
 app.use("/api/loginAdmin", LoginAdmin)
 app.use("/api/Boletos", BoletosRoutes)
+app.use("/api/Wompi", Wompi)
+app.use("/api/LogOutClientes", LogOutClientes)
+app.use("/api/LogOutAdmin", LogOutAdmin)
 
 export default app
