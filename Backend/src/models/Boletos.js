@@ -9,13 +9,13 @@ const BoletosSchema = new Schema({
         type: String
     },
     purchaseDate: {
-        type: String
+        type: Date
     },
     total:{
-        type: Boolean
+        type: Number
     },
     paymentStatus:{
-        type: Number
+        type: Boolean
     },
     transactionId:{
         type: String

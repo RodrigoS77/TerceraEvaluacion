@@ -6,7 +6,7 @@ BoletosContoller.getAllBoletos = async(req, res) => {
     try {
         const boletos = await BoletosModel
         .find()
-        .populate("customerId")
+        .populate("customerid")
         return res.status(200).json(boletos)
     } catch (error) {
         console.log("error" + error)

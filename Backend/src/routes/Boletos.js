@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.route("/")
 .get(validateAuthCookie(["Admin"]), BoletosController.getAllBoletos)
-.post(validateAuthCookie(["Cliente"]), BoletosController.InsertBoletos)
+.post(BoletosController.InsertBoletos)
 
 router.route("/id")
 .delete(validateAuthCookie(["Admin"]), BoletosController.deleteBoleto)

@@ -18,6 +18,9 @@ loginCliente.login = async (req, res) => {
         }
         
         const isMatch = await bcrypt.compare(password, ClienteFound.password)
+
+        console.log(password)
+        console.log(ClienteFound.password)
         
         if (!isMatch) {
             ClienteFound.loginAttemps = (ClienteFound.loginAttemps || 0 ) + 1
